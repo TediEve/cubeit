@@ -24,6 +24,6 @@ jobs:
 
       - name: Run test
         run: |
-          python -m http.server 8000 -d cubeit &
+          python -m http.server 8000 &
           sleep 1
           pytest -v
