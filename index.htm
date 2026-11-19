@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube It</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+        input {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        button {
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #005a9e;
+        }
+        #result {
+            margin-top: 1.25rem;
+            color: #333;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cube It</h1>
+        <input type="text" id="number-input" placeholder="enter number...">
+        <button id="cube-btn" onclick="cubeNumber()">Cube</button>
+        <p id="result">your result will appear here...</p>
+    </div>
+
+    <script>
+        function cubeNumber() {
+            const input = document.getElementById('number-input').value.trim();
+            const resultEl = document.getElementById('result');
+
+            if (input === '' || isNaN(Number(input))) {
+                resultEl.textContent = 'Enter a valid number!';
+                return;
+            }
+
+            const num = Number(input);
+            resultEl.innerHTML = `${num}<sup>3</sup>=${num ** 3}`;
+        }
+    </script>
+</body>
+</html>
